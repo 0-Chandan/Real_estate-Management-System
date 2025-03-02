@@ -1,0 +1,26 @@
+.agentprof{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+.card{
+    overflow: hidden;
+}
+img{
+    height: 17.6em;
+}
+img:hover{
+transform:scale(1.1);
+}
+@media screen and (max-width:800px){
+    p{
+        font-size: 12px;
+    }
+    .agentprof{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+    }
+  }

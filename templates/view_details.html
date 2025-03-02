@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} View Details {% endblock title %}
+{% block head %} 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="{% static "css/view_details.css" %}"> 
+{% endblock head %}
+{% block body %}
+<div class="hero-img">
+    <p>PROPERTY DETAILS</p>
+</div>
+<div class="d-flex justify-content-around">
+    <div class="top">
+        <div class="first-img">
+            <img src="/media/{{data.img1}}" alt="">
+        </div> 
+        <div class="d-flex justify-content-md-between" style="width: 87%;">
+            <p class="btn btn-success btn-lg disabled">For {{data.status}}</p>
+            <div class="acr btn btn-primary"><a href="/booking-now">Booking now</a></div>
+            <p style="font-weight: bold;"><i class="fa-solid fa-indian-rupee-sign"></i> {{data.price}} <br><span style="font-weight: normal;">Price</span></p>
+        </div>
+        <div  style="width: 87%;">
+            <p><i class="fa-solid fa-location-dot"></i>&nbsp;{{data.Address}},{{data.city}}</p>
+        </div>
+        <div class=" p-3 mb-2 bg-light" style="width: 92%;height:90px;">
+            <div style="font-weight: bold;">
+                <div class="d-flex justify-content-md-between pi" style="width: 65%;"> 
+                <p>{{data.area_size}}</p>
+                <p>{{data.bedroom}}</p>
+                <p>{{data.bathroom}}</p>
+                <p>{{data.balcony}}</p>
+                <p>{{data.hall}}</p>
+                <p>{{data.kitchen}}</p>
+            </div>
+            </div>
+            <div>
+                <div class="d-flex justify-content-md-between pi" style="width: 65%;"> 
+                <p>Sqrt</p>
+                <p>Bedroom</p>
+                <p>Bathroom</p>
+                <p>Balcony</p>
+                <p>Hall</p>
+                <p>Kitchen</p>
+            </div>
+        </div>
+        </div>
+        <div>
+            <h4 style="margin-top: 20px;">Description</h4>
+            </div>
+        <div>
+        <p>{{data.content}} </p>
+        </div>
+        <div style="margin-top: 30px;">
+            <h4>Property Summary</h4>
+        </div>
+        <div>
+            <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <td scope="row">BHK:</td>
+                    <td>{{data.bhk}}</td>
+                    <td>Property Type:</td>
+                    <td>{{data.property_type}}</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Status:</td>
+                    <td>{{data.status2}}</td>
+                    <td>Total Floor</td>
+                    <td>{{data.floorap}}&nbsp;Floor</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">City:</td>
+                    <td>{{data.city}}</td>
+                    <td>State</td>
+                    <td>{{data.state}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div>
+            <h4>Features</h4>
+        </div>
+        <div>
+          {{data.feature}}
+        </div>
+        <div style="margin-top: 40px;">
+            <h4>Propetry Images</h4>
+        </div>
+        <div class="nav-item dropdown btn btn-light">
+                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+                 Image1
+                </a>
+                <div class="dropdown-menu">
+                  <img src="/media/{{data.img2}}" alt="">
+        </div>
+        </div>
+        <div class="nav-item dropdown btn btn-light">
+            <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+             Image2
+            </a>
+            <div class="dropdown-menu">
+              <img src="/media/{{data.img3}}" alt="">
+    </div>
+    </div>
+    <div class="nav-item dropdown btn btn-light">
+        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+         Image3
+        </a>
+        <div class="dropdown-menu">
+          <img src="/media/{{data.img4}}" alt="">
+</div>
+</div>
+<div class="nav-item dropdown btn btn-light">
+    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+     Image4
+    </a>
+    <div class="dropdown-menu">
+      <img src="/media/{{data.img5}}" alt="">
+</div>
+</div>
+<div class="nav-item dropdown btn btn-light">
+    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+    Property Sturture Image
+    </a>
+    <div class="dropdown-menu">
+      <img src="/media/{{data.floor_planimg}}" alt="">
+</div>
+</div>
+<div class="nav-item dropdown btn btn-light">
+    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+     Ground Floor Image
+    </a>
+    <div class="dropdown-menu">
+      <img src="/media/{{data.groundfloorimg}}" alt="">
+</div>
+</div>
+<div class="nav-item dropdown btn btn-light">
+    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false" style="color: black;">
+     Basement Floor Image
+    </a>
+    <div class="dropdown-menu">
+      <img src="/media/{{data.basementfloor}}" alt="">
+</div>
+</div>
+
+    </div>
+    <div class="top2" style="margin-top: 30px;">
+      {% comment %} Installment Calculator {% endcomment %}
+        <h4>Instalment Calculator</h4>
+        <div style="margin-top: 30px;">
+          <form action="/installment" method="POST">
+            {% csrf_token %}
+            <div class="input-group flex-nowrap">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-indian-rupee-sign"></i></span>
+                </div>
+                <input type="text" class="form-control" name="price" placeholder="Propert Price" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+              <div class="input-group flex-nowrap">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="addon-wrapping"><i class="fa-regular fa-calendar-days"></i></span>
+                </div>
+                <input type="text" class="form-control" name="duration" placeholder="Duration Year" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+              <div class="input-group flex-nowrap">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="addon-wrapping"><i class="fa-solid fa-percent"></i></span>
+                </div>
+                <input type="text" class="form-control" name="interest" placeholder="Interest Rate" aria-label="Username" aria-describedby="addon-wrapping">
+              </div>
+              <div class="btn">
+              <button type="submit" class="btn btn-danger btn2">Calculate Installment</button>
+              </form>
+              </div>
+      {% comment %}FEEDBACK {% endcomment %}
+             <div style="margin-top: 60px;">
+              <h4>Feedback</h4>
+             </div> 
+             <form action="/view_details/{{data.id}}" method="POST" style="margin-top:30px">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Full Name:</label>
+                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Phone Number:</label>
+                <input type="number" class="form-control"name="phone" placeholder="Phone Number" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Feedback:</label>
+                <textarea class="form-control" name="feedback" rows="3" placeholder="feedback..." required></textarea>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-secondary">Submit</button>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

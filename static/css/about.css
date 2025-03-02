@@ -1,0 +1,29 @@
+.img1{
+    height: 300px;
+    width: 40%;
+    background-image: url(../images/buliding1.jpg);
+    background-size: 100% 100%;
+    border-radius: 6px;
+}
+h3{
+    font-family: Algerian;
+}
+.d-flex{
+    font-size:21px;
+    font-family: Blackadder ITC;
+    margin-top: 50px;
+}
+.img2{
+    height: 300px;
+    width: 40%;
+    background-image: url(../images/house2.jpg);
+    background-size: 100% 100%;
+    border-radius: 6px;
+}
+.img3{
+    height: 300px;
+    width: 40%;
+    background-image: url(../images/outhome.jpg);
+    background-size: 100% 100%;
+    border-radius: 6px;
+}

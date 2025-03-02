@@ -1,0 +1,179 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.hero-img{
+    height:500px;
+    width:100%;
+    background-image: url(../images/buliding1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.text{
+    color: rgb(252, 254, 254);
+    font-size: 2rem;
+    min-height: 400px;
+    position: relative;
+    top: 150px;
+    margin-left: 170px;
+}
+.let{
+    color: rgb(20, 211, 160);
+    
+}
+span{
+    margin-top: 300px;
+    margin-left: 5%;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 140px;
+
+}
+input{
+    border: none;
+    width: 31rem;
+    height: 37px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#btnprop{
+    color: aliceblue;
+    background-color: green;
+    font-size:0.77rem;
+    height: 38px;
+    font-weight: bold;
+    width:9rem;
+    border-radius: 4px;
+    margin-left: 2em;
+}
+.fea{
+    padding: 10px;
+    height: 400px;
+   
+ }
+ .pwwd{
+    font-size:28px; 
+    text-align:center;
+    font-style:italic;
+    margin-top: 40px;
+    font-weight:600;
+ }
+.wwd{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 70px;
+   
+}
+.card:hover{
+    box-shadow: 7px 8px 7px rgb(209, 211, 214);
+}
+img{
+    height: 80px;
+    width: 100px;
+}
+.card-deck{
+    width: 80rem;
+    margin-top: 5rem;
+}
+.recentproperty{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.whch{
+    height: 450px;
+    width: 100%;
+    background-color: rgb(131, 128, 124);
+    background-image: url(../images/family.jpg);
+    background-repeat: no-repeat;
+    background-size: 90% 100%;
+}
+.whch-text{
+    background-color: rgba(3, 48, 53, 0.75);
+    height: 100%;
+    width: 50%;
+    color: rgb(255, 255, 255);
+}
+.howitwork{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.img2{
+    mix-blend-mode: multiply;
+    height: 60px;
+    width:60px
+}
+h3{
+    text-align: center;
+   
+}
+.card-image{
+    overflow: hidden;
+}
+.card-image img:hover{
+    transform: scale(1.1);
+}
+i{
+    color: green;
+}
+@media screen and (max-width:800px){
+    .hero-img{
+        height:500px;
+        width:100%;
+        background-image: none;
+        background-color: black;
+    }
+    ul{
+        font-size: 10px;
+    }
+
+    .rc{
+        margin-top: 310px;
+    }
+    .wwd{
+         font-size: 12px;
+    }
+    .card{
+        height: 100px;
+        width:150px;
+        margin: 20px;
+        margin-top: 100px;
+    }
+    .card-text{
+        display: none;
+    }
+    li h4{
+        font-size: 12px;
+    }
+    .loc{
+        width: 90%;
+        margin-top: 60px;
+    }
+    #btnprop{
+        margin-top: 20px;
+    }
+    .gui{
+        font-size: 16px;
+    }
+    .card{
+        margin: 15px;
+    }
+    span{
+        margin-top: 0px;
+        margin-left: 0%;
+    }
+    .whch-text h4{
+        font-size: 12px;
+    }
+    .whch-text h3{
+        font-size: 12px;
+    }
+}

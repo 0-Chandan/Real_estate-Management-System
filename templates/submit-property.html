@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}submit-property{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/submit-property.css" %}">
+<link rel="stylesheet" href="{% static "css/login2.css" %}">
+{% endblock head %}
+{% block body %}
+{% if not request.user.is_authenticated %}
+<div class="formtop2">
+    <form action="/hlogin" method="POST" class="form2">
+     {% csrf_token %}
+       <h4>Login</h4>
+       <p class="p1">Access to our daskbord</p>
+       {% for message in messages %}
+       <p style="color:red;">{{message}}</p>
+       {% endfor %}
+       <input type="text" name="uname" placeholder="Username" class="inp1" required>
+       <div>
+        <i class="fa-solid fa-unlock-keyhole  position-absolute" id="unlc" onclick="lock()"></i>
+       <i class="fa-solid fa-lock inline position-absolute" id="lc" onclick="lock()"></i>
+        <div>
+       <input type="password" name="password" placeholder="Your Password" class="inp1" onkeydown="bl()" id="pass" required>
+        </div>
+       </div>
+       <input type="submit" value="Login" id="sub" name="sub">
+       <p>If don't have account? <a href="/Register" style="color: blue; text-decoration: underline;">Register</a></p>
+    </form>
+</div>
+{% else %}
+<div>
+    <h3 style="text-align: center;">Submit Property</h3>
+</div>
+<div class="container-md">
+    <h5>Basic Information</h5>
+    <hr>
+<form action="/submit-property" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="dtitle">
+        <label for="title1">Title</label>
+        <input type="text" id="title1" class="form-control" name="title" required>
+    </div>
+    <div class="dcontent">
+        <label for="content">Content</label>
+       <textarea name="content" id="content"></textarea>
+    </div>
+    <div class="dtype">
+        <div class="dproptype">
+            <label for="">Property Type</label>
+        <select name="propertytype" id="">
+            <option value="">select Type</option>
+            <option value="Apartment">Apartment</option>
+            <option value="House">House</option>
+            <option value="Flight">Flight</option>
+            <option value="Building">Building</option>
+            <option value="Office">Office</option>
+        </select>
+        </div>
+        <div class="dbhk">
+            <label for="">BHK</label>
+            <select name="bhk" id="" style="margin-left: 60px;">
+                <option value="">select BHK</option>
+                <option value="1 BHK">1 BHK</option>
+                <option value="2 BHK">2 BHK</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="4 BHK">4 BHK</option>
+                <option value="5 BHK">5 BHK</option>
+                <option value="1,2 BHK">1,2 BHK</option>
+                <option value="2,3 BHK">2,3 BHK</option>
+                <option value="2,3,4 BHK">2,3,4 BHK</option>
+            </select>
+        </div>
+        <div class="dstatus">
+            <label for="">Status</label>
+            <select name="status" id="" style="margin-left:90px;">
+                <option value="">select Status</option>
+                <option value="Rent">Rent</option>
+                <option value="Sale">Sale</option>
+            </select>
+        </div>
+        <div class="dbedroom">
+            <label for="" style="margin-left: 20px;">Bedroom</label>
+            <input type="text" id="title1" placeholder="Enter Bedroom only no 1 to 12" name="bedroom">
+        </div>
+        <div class="dkitchen">
+            <label for="" >Kitchen</label>
+            <input type="text" id="title1" placeholder="Enter Kitchen only no 1 to 12" name="kitchen">
+        </div>
+        <div class="dhall">
+            <label for="" style="margin-left: 20px;">Hall</label>
+            <input type="text" id="title1" placeholder="Enter Hall only no 1 to 12" name="hall" >
+        </div>
+        <div class="dkitchen">
+            <label for="" >Bathroom</label>
+            <input type="text" id="title1" placeholder="Enter Bathroom only no 1 to 12" name="bathroom" style="margin-left:50px;">
+        </div>
+        <div class="dhall">
+            <label for="" style="margin-left: 20px;">Balcony</label>
+            <input type="text" id="title1" placeholder="Enter Hall only no 1 to 12" name="balcony" style="margin-left:38px;">
+        </div>
+    </div>
+</div>
+ <div class="container-md priceloc">
+      <h5 style="margin-top: 20px;">Price & Location</h5>
+      <hr>
+      <div class="dtype">
+        <div class="dproptype">
+            <div class="dbedroom">
+                <label for="" style="margin-left: 20px;">Floor</label>
+                <input type="text" placeholder="Enter Total Floor" name="floor">
+            </div>
+        </div>
+        <div class="dbhk">
+            <div class="dbedroom">
+                <label for="" style="margin-left: 20px;">Price</label>
+                <input type="text" placeholder="Enter Price" name="price">
+            </div>
+            
+        </div>
+        <div class="dbedroom">
+            <label for="" >Area_Size</label>
+            <input type="text" placeholder="Enter Area Size(in sqrt)" name="areasize">
+        </div>
+        <div class="dkitchen">
+            <label for="" style="margin-left: 20px;"></label>City</label>
+            <input type="text" placeholder="Enter City" name="city" style="margin-left: 30px;">
+        </div>
+        <div class="dhall">
+            <label for="">Address</label>
+            <input type="text"i placeholder="Enter Address" name="address" style="margin-left:27px;">
+        </div>
+        <div class="dkitchen">
+            <label for="" >State</label>
+            <input type="text"  placeholder="Enter State" name="state">
+        </div>
+    </div>
+    <div class="dfeature">
+        <label for="" >Feature</label>
+        <textarea name="feature" id=""></textarea>
+    </div>
+    </div>
+    <div class="container-md forimage">
+        <h5>Image & Status</h5>
+        <hr>
+    <div class="dimg1">
+        <div style="width: 50%;">
+        <label for="" >Image 1</label>
+        <input type="file" accept=".jpg , .png , .jpeg"  name="img1" required>
+        </div>
+        <div style="width: 50%;">
+        <label for="" >Image 2</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="img2" required>
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Image 3</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="img3" required>
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Image 4</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="img4" required>
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Image 5</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="img5" required>
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Floor Plan Image</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="floorplanimg" required>
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Status</label>
+       <select name="status2" id="" style="width: 40%;">
+        <option value="">Select Status</option>
+        <option value="Available">Available</option>
+        <option value="Sold Out">Sold Out</option>
+       </select>
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Ground Floor Plan Image</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="groundfloor">
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Basement Floor Plan Image</label>
+        <input type="file"  accept=".jpg , .png , .jpeg"  name="basementfloor">
+       </div>
+    </div>
+    </div>
+
+    <div class="container-md">
+  <hr>
+  <div class="d-flex">
+    <label for="" >Is featured?</label>
+       <select name="isfeature" id="" style="width: 40%;height: 36px;border-radius: 6px;">
+        <option value="">Select...</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+       </select>
+       <div style="width: 50%;">
+        <label for="" >Date</label>
+        <input type="date"   name="date">
+       </div>
+       <div style="width: 50%;">
+        <label for="" >Owner name:</label>
+        <input type="text"   name="ownername">
+       </div>
+  </div>
+   <input type="submit" name="sub" class="btn1" value="Submit Property">
+    </div>
+</form>
+{% endif %}
+{% endblock body %}

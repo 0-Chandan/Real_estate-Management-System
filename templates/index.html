@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+{% block head %} 
+<link rel="stylesheet" href="{% static "css/home.css" %}">
+<link rel="stylesheet" href="{% static "css/slider.css" %}">
+ <!--CSS SWIPER-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.0.6/swiper-bundle.min.css">
+ {% endblock head %}
+{% block body %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="position:absolute;z-index:4;width:100%">
+    Message!{{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+    <div>
+{% endfor %}
+<div class="hero-img">
+    <div class="text">
+      <span class="let">Let us</span><br>
+      <span class="gui">Guide you Home and Find Your Perfect Property</span>
+    </div>
+    <div class="search">
+    <form action="/search" method="get" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="search"  placeholder="Address / City / State / Propertytype" class="loc" name="query" id="search">
+      <input type="submit" value="Search Property" name="sub" id="btnprop">
+    </form>
+    </div>
+ </div>
+  <div class="fea">
+    <p class="pwwd">What We Do</p>
+    <div class="wwd">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img src="{% static "images/sellingserl.png" %}" alt="">
+          <h5 class="card-title">Selling Service</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img src="{% static "images/rentalh.jpg" %}" alt="">
+          <h5 class="card-title">Rental Service</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img src="{% static "images/listprop.jpg" %}" alt="">
+          <h5 class="card-title">Property Listing</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+         
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img src="{% static "images/leginves.jpg" %}" alt="">
+          <h5 class="card-title">Legal Investment</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="rc">
+ <h3 style="text-align:center; margin-top: 50px;">Recent Property</h3></div>
+  <div class="slide-container swiper">
+    <div class="slide-content">
+        <div class=" card-wrapper swiper-wrapper">
+            <!--CARD 1-->
+            {% for i in data %}
+            <div class="card swiper-slide">
+                    <div class="card-image">
+                        <img class="card-img" src="media/{{i.img1}}" alt="">
+                    </div>
+    
+                <div class="card-content">
+                    <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text"><i class="fa-solid fa-location-dot"></i>{{i.Address}},{{i.city}}</p>
+        <div class="d-flex justify-content-between bg-light" style="font-size:15px;width:100%">
+          <div>
+            <h6>{{i.area_size}}</h6>
+            <p>Sqrt</p>
+          </div>
+          <div>
+            <h6>{{i.bedroom}}</h6>
+            <p>Beds</p>
+          </div>
+          <div>
+            <h6>{{i.bathroom}}</h6>
+            <p>Baths</p>
+          </div>
+          <div>
+            <h6>{{i.kitchen}}</h6>
+            <p>Kitchen</p>
+          </div>
+          <div>
+            <h6>{{i.balcony}}</h6>
+            <p>Balcony</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp{{i.price}}</p>&nbsp&nbsp   
+          <p>Area Size:{{i.area_size}}Sqrt</p>
+          </div>
+        <div class="d-flex justify-content-between">
+        <p><i class="fa-solid fa-user"></i>By:{{i.ownername}}</p>&nbsp&nbsp  
+        <p><i class="fa-regular fa-calendar-days"></i>&nbsp{{i.date}}</p>
+        </div>
+        <a href="/view_details/{{i.id}}" class="btn btn-primary">View Details</a>
+                </div>
+                
+            </div>
+            {% endfor %}
+            
+            <!--CARD 9-->
+    
+        </div>
+    </div>
+    <div class="swiper-button-next swiper-navBtn"></div>
+    <div class="swiper-button-prev swiper-navBtn"></div>
+    <div class="swiper-pagination"></div>
+</div>
+<div class=" whch">
+<div class="whch-text">
+    <h3 style="margin-left: 30px; margin-top: 30px;">Why Choose Us</h3>
+    <ul type="square" style="margin-left: 70px; margin-top: 50px;">
+        <li>
+        <h4>Top Rated</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.Voluptates in <br> libesapiente nesciunt odit  .</p>
+        </li>
+        <li>
+        <h4>Experience Quality</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates in <br> libesapiente nesciunt odit  .</p>
+        </li>
+        <li>
+            <h4>Experience Agents</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates in <br> libesapiente nesciunt odit  .</p>
+            </li>
+    </ul>
+</div>
+</div>
+<div style="margin-top:50px">
+    <h3 style="margin-top:50px; text-align: center;">How It Work</h3>
+    <div  class="container-md howitwork">
+    <div>
+      <img src="{% static "images/discus.jpg" %}" alt="" class="img2">
+      -------------------------------------------------------------------
+      <h5 style="color:black;">Discussion</h4>
+    </div>
+    
+    <div>
+        <img src="{% static "images/filrevi.png" %}" alt="" class="img2">
+        --------------------------------------------------------------------
+        <h5 style="color:black;">Files Review</h4>
+      </div>
+      <div>
+        <img src="{% static "images/acquire.jpg" %}" alt="" class="img2">
+        <h5 style="color:black;">Acquire</h4>
+      </div>
+    </div>
+</div>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!--JAVASCRIPT LOCAL-->
+<script src="{% static "js/slider.js" %}"></script>
+{% endblock body %}

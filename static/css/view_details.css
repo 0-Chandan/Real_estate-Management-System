@@ -1,0 +1,69 @@
+.hero-img{
+    height: 200px;
+    width: 100%;
+    color:aliceblue;
+    font-size: 3rem;
+    background-image: url(../images/room4.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.hero-img p{
+    position: relative;
+    top:80px;
+    margin-left: 40px;
+}
+.first-img{
+    width: 90%;
+    height: 22em;
+    margin-top: 40px;
+}
+.first-img img{
+    width: 99%;
+    height: 99%;
+}
+.top{
+    width: 60%;
+}
+.nav-item{
+    color: black;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    text-align: left;
+}
+img{
+    width: 100%;
+    height:500px;
+}
+.top2{
+    width: 30%;
+}
+.input-group{
+    margin-top: 10px;
+}
+.btn2{
+    margin-top: 15px;
+}
+.booking{
+    height: 50px;
+}
+.acr{
+    background-color: blue;
+    height: 40px;
+}
+.acr a:hover{
+    color: aliceblue;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:800px){
+    p{
+        font-size: 12px;
+    }
+  
+    .pi{
+    display: flex;
+    justify-content: space-between;
+    }
+  }

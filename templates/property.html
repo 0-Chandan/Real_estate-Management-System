@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Property{% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/property.css" %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock head %}
+{% block body %}
+<div class="container">
+ <div class="row propcont">
+  {% for i in data %}
+  <div class="col-6 col-md-4">
+    <div class="card propcard" style="width: 21rem;">
+      <img src="media/{{i.img1}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text"><i class="fa-solid fa-location-dot"></i>{{i.Address}},{{i.city}}</p>
+        <div class="d-flex justify-content-between bg-light" id="pi" style="font-size:15px;width:100%">
+          <div>
+            <h6>{{i.area_size}}</h6>
+            <p>Sqrt</p>
+          </div>
+          <div>
+            <h6>{{i.bedroom}}</h6>
+            <p>Beds</p>
+          </div>
+          <div>
+            <h6>{{i.bathroom}}</h6>
+            <p>Baths</p>
+          </div>
+          <div>
+            <h6>{{i.kitchen}}</h6>
+            <p>Kitchen</p>
+          </div>
+          <div>
+            <h6>{{i.balcony}}</h6>
+            <p>Balcony</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p><i class="fa-solid fa-indian-rupee-sign"></i>&nbsp{{i.price}}</p>  
+          <p>Area Size:{{i.area_size}}Sqft</p>
+          </div>
+        <div class="d-flex justify-content-between">
+        <p><i class="fa-solid fa-user"></i>By:{{i.ownername}}</p>  
+        <p><i class="fa-regular fa-calendar-days"></i>&nbsp{{i.date}}</p>
+        </div>
+        <a href="/view_details/{{i.id}}" class="btn btn-primary">view details</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+ </div>
+</div>
+
+{% endblock body %}

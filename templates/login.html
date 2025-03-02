@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Login {% endblock title %}<title></title>
+{% block head %}
+<link rel="stylesheet" href="{% static "css/register.css" %}">
+<script src="{% static "js/resistration.js" %}"></script>
+{% endblock head %}
+{% block body %}
+<div class="formtop">
+    <form action="/hlogin" method="POST">
+     {% csrf_token %}
+       <h4>Login</h4>
+       <p class="p1">Access to our daskbord</p>
+       {% for message in messages %}
+       <p style="color:red;">{{message}}</p>
+       {% endfor %}
+       <input type="text" name="uname" placeholder="Username" class="inp1" required>
+       <div>
+        <i class="fa-solid fa-unlock-keyhole  position-absolute" id="unlc" onclick="lock()"></i>
+       <i class="fa-solid fa-lock inline position-absolute" id="lc" onclick="lock()"></i>
+        <div>
+       <input type="password" name="password" placeholder="Your Password" class="inp1" onkeydown="bl()" id="pass" required>
+        </div>
+       </div>
+       <input type="submit" value="Login" id="sub" name="sub">
+       <p>If don't have account? <a href="/Register" style="color: blue; text-decoration: underline;">Register</a></p>
+    </form>
+</div>
+{% endblock body %}
+

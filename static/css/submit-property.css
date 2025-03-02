@@ -1,0 +1,110 @@
+
+form{
+    width: 100%;
+}
+.dtitle{
+    display: flex;
+}
+ .dtitle input{
+    width: 83%;
+    margin-left: 13%;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+}
+label{
+    font-size: 19px;
+}
+.dcontent{
+    display: flex;margin-top:20px;
+}
+.dcontent textarea{
+    width: 84%;
+    margin-left: 10%;
+    height: 300px;
+    border-radius: 5px;
+    outline: none;
+}
+.dtype{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 15px;
+ 
+}
+.dtype select{
+    width:400px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.dproptype{
+    display: flex;
+}
+.dbhk{
+    display: flex;
+    margin-left: 20px;
+}
+.dstatus{
+    display: flex;
+    margin-top: 20px;
+}
+.dbedroom{
+    display: flex;
+    margin-top: 20px;
+}
+.dbedroom input{
+    width:420px;
+    height: 40px;
+    border-radius: 5px;
+    margin-left: 3%;
+}
+.dkitchen{
+    display: flex;
+    margin-top: 20px;
+}
+.dkitchen input{
+    margin-left:77px;
+    width: 400px;
+    border-radius: 5px;
+}
+.dhall{
+    display: flex;
+    margin-top: 20px;
+}
+
+.dhall input{
+    width: 400px;
+    border-radius: 5px;
+    margin-left: 67px;
+}
+.dfeature{
+    display: flex;
+    margin-top: 20px;
+}
+.dfeature textarea{
+    margin-left: 30px;
+   height:300px;
+   width: 70%;
+   border-radius: 10px;
+}
+.dimg1{
+    display: flex;
+    flex-wrap: wrap;
+}
+.dimg1 input{
+    width: 50%;
+}
+.dimg1 div{
+    margin-top: 15px;
+}
+.btn1{
+width: 160px;
+height: 40px;
+background-color: rgb(37, 163, 161);
+border: none;
+color: aliceblue;
+border-radius: 5px;
+margin-top: 10px;
+margin-left: 7em;
+}

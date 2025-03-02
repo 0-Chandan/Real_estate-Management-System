@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(229, 231, 233);
+}
+.pannel{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    background-color: rgb(23, 23, 23);
+}
+.call{
+    color: forestgreen;
+}
+.em{
+   color: forestgreen;
+}
+.callicon,.emailicon{
+    margin-top:7px;
+   margin-left: 60px;
+}
+a{
+    color: aliceblue;
+}
+.ac{
+    margin-top: 7px;
+    margin-left: 10px;
+}
+.logini{
+    font-size: 15px;
+  color: forestgreen;
+}
+.lic1{
+   margin-left: 42%;
+}
+/*navbar*/
+/* .logo{
+    height: 45px;
+    width: 90px;
+    background-image: url(../images/realestatelogo2.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+} */
+ #pos{
+    position: sticky;
+    top:-1px;
+    z-index: 4;
+ }
+ .real{
+    margin-top: 7px;
+    font-family:Lucida Handwriting;
+    font-weight: bold;
+ }
+li{
+    margin-left: 25px;
+}
+.subpr{
+    text-align: center;
+    font-size: 15px;
+    height: 40px;
+    width: 150px;
+    background-color: green;
+   margin-left:300%;
+   border-radius: 20px;
+}
+@media screen and  (max-width:1240px){
+    .subpr{
+       margin-left: 200px;
+    } 
+}
+@media screen and  (max-width:800px){
+    .pannel{
+        display: none;
+    }
+}
+
+
+
+
+

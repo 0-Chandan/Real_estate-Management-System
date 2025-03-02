@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}  Contact  {% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="{% static "css/contact.css" %}">
+{% endblock head %}
+{% block body %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="position:absolute;z-index:4;width:100%">
+  {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+    <div>
+{% endfor %}
+<div class="maincontainer">
+    <div class="forcontent">
+    <p style="font-size: 20px;">Contacts</p>
+   <ul>
+    <p><i class="fa-solid fa-location-dot"></i>Address</p>
+    <li>(825319)Katkamdag Hazaribag,Jharkhand</li>
+    <li>(825319)Katkamdag Hazaribag,Jharkhand</li>
+   </ul>
+   <ul>
+    <p><i class="fa-solid fa-phone"></i>Call Us</p>
+    <li>+91 9142737408</li>
+    <li>+91 9142737408</li>
+   </ul>
+   <ul>
+    <p><i class="fa-solid fa-envelope"></i>Email Address</p>
+    <li>helpline@realestate.com</li>
+    <li>helpline@realestate.com</li>
+   </ul>
+   </div>
+   <div class="forfrom">
+    <p style="font-size: 24px;text-align: center;">Get In Touch</p>
+    <form action="/contact" method="POST">
+      {% csrf_token %}
+        <input type="text" name="uname" placeholder="Your Name" class="inp1" required>
+        <input type="email" name="email" placeholder="Email Address" class="inp2" required>
+        <input type="number" name="phone_no" placeholder="Phone" class="inp3" required>
+        <input type="text" name="subject" placeholder="Subject" class="inp4" required>
+        <textarea name="comment" id="inp5" placeholder="Type comment..." rows="10" cols="15"></textarea>
+        <input type="submit" value="Enter" id="sub" name="sub">
+   </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Register {% endblock title %}
+{% block head %}
+<link rel="stylesheet" href="{% static "css/register.css" %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" 
+referrerpolicy="no-referrer" />
+<script src="{% static "js/resistration.js" %}"></script>
+{% endblock head %}
+{% block body %}
+<div class="formtop">
+    <form action="/Register" method="POST">
+        {% csrf_token %}
+       <h4>Register</h4>
+       <p class="p1">Access to our daskbord</p>
+       <input type="text" name="uname" placeholder="Your Name" class="inp1" required>
+       <input type="email" name="email" placeholder="Your Email" class="inp1" required>
+       <input type="number" name="phone_no" placeholder="Your Phone" class="inp1" required>
+       <div>
+        <i class="fa-solid fa-unlock-keyhole  position-absolute" id="unlc" onclick="lock()"></i>
+       <i class="fa-solid fa-lock inline position-absolute" id="lc" onclick="lock()"></i>
+        <div>
+       <input type="password" name="password" placeholder="Your Password" class="inp1" onkeydown="bl()" id="pass" required>
+        </div>
+       </div>
+       
+       <input type="password" name="cpassword" placeholder="Confirm password" class="inp1" required>
+       <input type="submit" value="Register" id="sub" name="sub">
+       <p>If Already Account? <a href="/hlogin" style="color: blue; text-decoration: underline;">Login</a></p>
+    </form>
+</div>
+{% endblock body %}

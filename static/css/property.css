@@ -1,0 +1,36 @@
+.propcont{
+  margin-top: 30px;
+}
+.propcard{
+    margin-top: 15px;
+    overflow: hidden;
+   
+}
+.propcard:hover{
+  box-shadow: 5px 6px 5px rgb(190, 186, 186);
+}
+i{
+  color:rgb(10, 179, 10)
+}
+img{
+  height: 180px;
+}
+.card img:hover{
+  transform: scale(1.1);
+}
+@media screen and (max-width:800px){
+  .propcont{
+    margin:0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 12px;
+    width: 100px;
+  }
+  .card-body #pi{
+    display: none;
+  }
+
+  
+}
